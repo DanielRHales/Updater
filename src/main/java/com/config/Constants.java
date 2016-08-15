@@ -1,0 +1,21 @@
+package com.config;
+
+
+import java.io.File;
+
+/**
+ * @author Daniel
+ */
+public class Constants {
+
+    private static final String SERVER_NAME = "DeviousPs";
+
+    public static final File MAIN_DIRECTORY = new File(System.getProperty("user.home"), SERVER_NAME);
+    public static final File ERROR_DIRECTORY = new File(MAIN_DIRECTORY, ".UpdaterErrors");
+    public static final File PROGRAM_DIRECTORY = new File(MAIN_DIRECTORY, ".Launcher");
+    public static final File PROGRAM_FILE = new File(PROGRAM_DIRECTORY, "Launcher.jar");
+
+    private static final String REMOTE_ROOT_LINK = String.format("http://cache.%s.com/", SERVER_NAME);
+    public static final String REMOTE_PROGRAM_LINK = String.format("%sDeviousPs.jar", REMOTE_ROOT_LINK);
+
+}
