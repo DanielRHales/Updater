@@ -2,7 +2,7 @@ package com.util;
 
 import com.config.Configuration;
 import com.config.Constants;
-import com.data.CheckSum;
+import com.data.StreamHash;
 import com.io.Connector;
 
 /**
@@ -28,9 +28,11 @@ public class Identifier {
     }
 
     public void refresh() {
-        current = CheckSum.getStreamHash(Configuration.getFileStream().setInputStream(Connector.getFileInputStream()));
+        current = StreamHash.getStreamHash(Configuration.getFileStream().setInputStream(Connector.getFileInputStream()));
         if (remote == null) {
-            remote = CheckSum.getStreamHash(Configuration.getUrlStream().setInputStream(Connector.getUrlInputStream()));
+            remote = StreamHash.getStreamHash(Configuration.getUrlStream().setInputStream(Connector.getUrlInputStream()));
         }
+        Configuration.getFileStream().close();
     }
+
 }
