@@ -8,7 +8,7 @@ import java.io.File;
  */
 public class Constants {
 
-    private static final String SERVER_NAME = "Noxious";
+    private static final String SERVER_NAME = "NoxiousPs";
 
     public static final File MAIN_DIRECTORY = new File(System.getProperty("user.home"), SERVER_NAME);
     public static final File ERROR_DIRECTORY = new File(MAIN_DIRECTORY, ".UpdaterErrors");
