@@ -1,5 +1,5 @@
 -injars Updater.jar
--outjars Obfuscated.jar
+-outjars Updater-Obfuscated.jar
 
 -libraryjars 'C:\Program Files (x86)\Java\jre1.8.0_91\lib\rt.jar'
 

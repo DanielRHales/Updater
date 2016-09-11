@@ -54,7 +54,7 @@ public class Connector {
     }
 
     private static InputStream getUrlInputStream(URLConnection connection) throws IOException {
-        connection.setReadTimeout(10000);
+        connection.setReadTimeout(300000);
         return connection.getInputStream();
     }
 
@@ -69,7 +69,7 @@ public class Connector {
 
     private static URLConnection getUrlConnection(URL url) throws IOException {
         URLConnection connection = url.openConnection();
-        connection.setConnectTimeout(10000);
+        connection.setConnectTimeout(300000);
         return connection;
     }
 
