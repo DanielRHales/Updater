@@ -28,7 +28,7 @@ public class Identifier {
     }
 
     public void refresh() {
-        current = StreamHash.getStreamHash(Configuration.getFileStream().setInputStream(Connector.getFileInputStream()));
+        current =StreamHash.getStreamHash(Configuration.getFileStream().setInputStream(Connector.getFileInputStream()));
         if (remote == null) {
             remote = StreamHash.getStreamHash(Configuration.getUrlStream().setInputStream(Connector.getUrlInputStream()));
         }
