@@ -16,7 +16,8 @@ public class Constants {
     public static final File PROGRAM_FILE = new File(PROGRAM_DIRECTORY, "Client.jar");
 
     private static final String REMOTE_ROOT_LINK = String.format("http://services.%s.org/", SERVER_NAME);
-    public static final String REMOTE_PROGRAM_LINK = String.format("%s%s.jar", REMOTE_ROOT_LINK, SERVER_NAME);
+    private static final String REMOTE_DATA_LINK = String.format("%sdata/", REMOTE_ROOT_LINK);
+    public static final String REMOTE_PROGRAM_LINK = String.format("%sClient.jar", REMOTE_DATA_LINK);
 
     private static final String[] ALGORITHMS = new String[]{"MD5", "SHA-1", "SHA-256"};
 
