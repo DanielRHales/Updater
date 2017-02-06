@@ -1,7 +1,7 @@
 package com.logging;
 
 import com.config.Constants;
-import com.config.Environment;
+import com.config.util.Environment;
 
 import java.io.File;
 import java.io.FileWriter;

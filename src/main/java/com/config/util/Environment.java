@@ -1,5 +1,6 @@
-package com.config;
+package com.config.util;
 
+import com.config.Configuration;
 import com.frame.impl.Dialog;
 import com.logging.Logger;
 

@@ -1,7 +1,7 @@
 package com.io;
 
 import com.config.Constants;
-import com.config.Environment;
+import com.config.util.Environment;
 import com.frame.impl.Dialog;
 import com.logging.Logger;
 
@@ -69,7 +69,7 @@ public class Connector {
 
     private static URLConnection getUrlConnection(URL url) throws IOException {
         URLConnection connection = url.openConnection();
-        connection.addRequestProperty("User-Agent", "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.0)");
+        connection.addRequestProperty("User-Agent", "Mozilla/5.0 (compatible; MSIE 6.0; Windows NT 5.0)");
         connection.setConnectTimeout(300000);
         return connection;
     }

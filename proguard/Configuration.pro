@@ -1,7 +1,7 @@
 -injars Updater.jar
 -outjars Updater-Obfuscated.jar
 
--libraryjars 'C:\Program Files (x86)\Java\jre1.8.0_102\lib\rt.jar'
+-libraryjars 'C:\Program Files\Java\jre1.8.0_121\lib\rt.jar'
 
 -dontskipnonpubliclibraryclassmembers
 -target 1.6

@@ -1,5 +1,7 @@
 package com.frame;
 
+import java.awt.*;
+
 /**
  * @author Daniel
  */
@@ -36,6 +38,18 @@ public class UI extends javax.swing.JFrame {
 
     private static class InstanceHolder {
         private static UI instance;
+    }
+
+    public void focus() {
+        EventQueue.invokeLater(new Runnable() {
+
+            @Override
+            public void run() {
+                setVisible(true);
+                toFront();
+                requestFocus();
+            }
+        });
     }
 
 }

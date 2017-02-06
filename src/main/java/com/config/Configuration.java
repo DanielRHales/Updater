@@ -8,8 +8,6 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.logging.Level;
 
-import static sun.security.x509.CertificateAlgorithmId.ALGORITHM;
-
 /**
  * @author Daniel
  */
@@ -43,7 +41,7 @@ public final class Configuration {
         try {
             return getMessageDigest(Constants.ALGORITHM);
         } catch (NoSuchAlgorithmException ex) {
-            Logger.log(Configuration.class, Level.SEVERE, String.format("No Such Algorithm - %s", ALGORITHM), ex);
+            Logger.log(Configuration.class, Level.SEVERE, String.format("No Such Algorithm - %s", Constants.ALGORITHM), ex);
             return null;
         }
     }
