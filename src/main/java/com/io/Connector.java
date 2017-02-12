@@ -1,7 +1,9 @@
 package com.io;
 
+import com.action.Action;
 import com.config.Constants;
 import com.config.util.Environment;
+import com.frame.UI;
 import com.frame.impl.Dialog;
 import com.logging.Logger;
 
@@ -47,7 +49,13 @@ public class Connector {
             if (Dialog.acceptedChoice("Failed to Connect", "Try to Reconnect?")) {
                 return getUrlInputStream();
             } else {
-                Environment.exit(true);
+                if (!Constants.PROGRAM_FILE.exists()) {
+                    if (Dialog.acceptedChoice("Cache Server Offline", "No Client found; Try to Reconnect?")) {
+                        return getUrlInputStream();
+                    }
+                    Environment.exit(true);
+                }
+                Action.setAction(UI.getInstance().getProgress(), Action.INVOKE_PROGRAM);
             }
         }
         return null;
