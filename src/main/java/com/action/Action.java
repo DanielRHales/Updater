@@ -1,10 +1,7 @@
 package com.action;
 
 import com.task.UpdateTask;
-import com.task.impl.Director;
-import com.task.impl.Downloader;
-import com.task.impl.Interpreter;
-import com.task.impl.Launcher;
+import com.task.impl.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -16,6 +13,7 @@ public enum Action {
     CHECK_DIRECTORIES(new Director()),
     CHECK_INFORMATION(new Interpreter()),
     DOWNLOAD_PROGRAM(new Downloader()),
+    DECOMPRESS_PROGRAM(new Composer()),
     INVOKE_PROGRAM(new Launcher());
 
     private final UpdateTask task;

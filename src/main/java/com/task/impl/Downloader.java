@@ -35,7 +35,8 @@ public class Downloader implements UpdateTask {
     }
 
     private void initialize() {
-        Environment.remove(Constants.PROGRAM_FILE);
+        Environment.createParentDirectories(Constants.PROGRAM_FILE);
+        Environment.createFiles(Constants.PROGRAM_FILE);
         try {
             download();
         } catch (IOException ex) {

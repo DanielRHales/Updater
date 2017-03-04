@@ -55,7 +55,7 @@ public class Connector {
                     }
                     Environment.exit(true);
                 }
-                Action.setAction(UI.getInstance().getProgress(), Action.INVOKE_PROGRAM);
+                Action.setAction(UI.getInstance().getProgress(), Action.DECOMPRESS_PROGRAM);
             }
         }
         return null;

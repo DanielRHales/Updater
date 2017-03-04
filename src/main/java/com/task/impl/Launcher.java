@@ -32,7 +32,7 @@ public class Launcher implements UpdateTask {
 
     private void launch() {
         try {
-            Runtime.getRuntime().exec(new String[]{"java", "-jar", Constants.PROGRAM_FILE.getAbsolutePath()});
+            Runtime.getRuntime().exec(new String[]{"java", "-jar", Constants.EXECUTABLE_FILE.getAbsolutePath(), "-Xmx512m"});
         } catch (IOException ex) {
             Logger.log(Launcher.class, Level.SEVERE, "Error invoking external program", ex);
         }
