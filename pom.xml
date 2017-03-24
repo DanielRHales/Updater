@@ -22,4 +22,12 @@
         </plugins>
     </build>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.LG1</groupId>
+            <artifactId>Logger</artifactId>
+            <version>1.0</version>
+        </dependency>
+    </dependencies>
+
 </project>

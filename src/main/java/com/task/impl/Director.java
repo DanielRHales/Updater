@@ -28,7 +28,6 @@ public class Director implements UpdateTask {
 
     private void build() {
         Environment.create(Constants.MAIN_DIRECTORY, true);
-        Environment.create(Constants.ERROR_DIRECTORY, true);
         Environment.create(Constants.PROGRAM_DIRECTORY, true);
     }
 

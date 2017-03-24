@@ -1,5 +1,7 @@
 package com.frame;
 
+import com.action.Action;
+
 import java.awt.*;
 
 /**
@@ -34,7 +36,7 @@ public class UI extends javax.swing.JFrame {
     }
 
     private void postInitiation(javax.swing.JProgressBar progress) {
-        com.action.Action.setAction(progress, com.action.Action.CHECK_DIRECTORIES);
+        com.action.Action.setAction(progress, Action.TRACK_PROGRAM);
     }
 
     public javax.swing.JProgressBar getProgress() {
