@@ -50,12 +50,12 @@ public class Connector {
                 return getUrlInputStream();
             } else {
                 if (!Constants.PROGRAM_FILE.exists()) {
-                    if (Dialog.acceptedChoice("Cache Server Offline", "No Client found; Try to Reconnect?")) {
+                    if (Dialog.acceptedChoice("Cache Server Offline", "No Launcher found; Try to Reconnect?")) {
                         return getUrlInputStream();
                     }
                     Environment.exit(true);
                 }
-                Action.setAction(UI.getInstance().getProgress(), Action.DECOMPRESS_PROGRAM);
+                Action.setAction(UI.getInstance().getProgress(), Action.INVOKE_PROGRAM);
             }
         }
         return null;

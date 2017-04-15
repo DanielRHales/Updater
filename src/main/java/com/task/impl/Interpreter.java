@@ -14,7 +14,7 @@ public class Interpreter implements UpdateTask {
     }
 
     public Action getAction() {
-        return Configuration.getIdentifier().updateRequired() ? Action.DOWNLOAD_PROGRAM : Action.DECOMPRESS_PROGRAM;
+        return Configuration.getIdentifier().updateRequired() ? Action.DOWNLOAD_PROGRAM : Action.INVOKE_PROGRAM;
     }
 
     public String getDescription() {

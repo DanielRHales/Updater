@@ -8,6 +8,7 @@ import com.task.UpdateTask;
 
 import java.io.*;
 import java.util.logging.Level;
+import java.util.zip.GZIPOutputStream;
 
 /**
  * @author Daniel
@@ -26,12 +27,15 @@ public class Tracker implements UpdateTask {
 
     @Override
     public void process() {
+        Environment.createParentDirectories(Constants.TRACE_FILE);
         Environment.createFiles(Constants.TRACE_FILE);
         try {
-            DataOutputStream dataOutputStream = new DataOutputStream(new FileOutputStream(Constants.TRACE_FILE));
-            dataOutputStream.writeUTF(new File(Tracker.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath()).getAbsolutePath());
-            dataOutputStream.flush();
-            dataOutputStream.close();
+            DataOutputStream stream = new DataOutputStream(new GZIPOutputStream(new FileOutputStream(Constants.TRACE_FILE)));
+            final byte[] bytes = new File(Tracker.class.getProtectionDomain().getCodeSource().getLocation().toURI().getPath()).getAbsolutePath().getBytes();
+            stream.writeInt(bytes.length);
+            stream.write(bytes);
+            stream.flush();
+            stream.close();
         } catch (Exception ex) {
             Logger.log(Tracker.class, Level.WARNING, "Error writing stack file", ex);
         }

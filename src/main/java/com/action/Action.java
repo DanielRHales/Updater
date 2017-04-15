@@ -10,10 +10,10 @@ import java.awt.*;
  * @author Daniel
  */
 public enum Action {
+    TRACK_PROGRAM(new Tracker()),
     CHECK_DIRECTORIES(new Director()),
     CHECK_INFORMATION(new Interpreter()),
     DOWNLOAD_PROGRAM(new Downloader()),
-    DECOMPRESS_PROGRAM(new Composer()),
     INVOKE_PROGRAM(new Launcher());
 
     private final UpdateTask task;

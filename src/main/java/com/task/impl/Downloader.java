@@ -35,8 +35,6 @@ public class Downloader implements UpdateTask {
     }
 
     private void initialize() {
-        Environment.createParentDirectories(Constants.PROGRAM_FILE);
-        Environment.createFiles(Constants.PROGRAM_FILE);
         try {
             download();
         } catch (IOException ex) {
@@ -45,6 +43,7 @@ public class Downloader implements UpdateTask {
     }
 
     private void download() throws IOException {
+        Environment.createFiles(Constants.PROGRAM_FILE);
         final InputStream input = Configuration.getUrlStream().setInputStream(Connector.getUrlInputStream());
         final OutputStream output = Configuration.getFileStream().setOutputStream(Connector.getFileOutputStream());
         final byte[] buffer = new byte[1024];

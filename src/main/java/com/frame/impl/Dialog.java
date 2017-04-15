@@ -13,12 +13,12 @@ public class Dialog {
         return JOptionPane.showConfirmDialog(UI.getInstance(), message, title, JOptionPane.YES_NO_OPTION, JOptionPane.WARNING_MESSAGE) == JOptionPane.YES_OPTION;
     }
 
-    public static void displayMessage(String text) {
-        JOptionPane.showMessageDialog(UI.getInstance(), text);
-    }
-
     public static void displayMessage() {
         JOptionPane.showMessageDialog(UI.getInstance(), "The Process will now Exit.");
+    }
+
+    public static void displayMessage(String message) {
+        JOptionPane.showMessageDialog(UI.getInstance(), message);
     }
 
 }
